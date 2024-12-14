@@ -1,0 +1,33 @@
+<!-- templates/results.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header text-center">
+            <h2>Quiz Results</h2>
+        </div>
+        <div class="card-body text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>{{ correct_answers }}</h3>
+                    <p>Correct Answers</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>{{ incorrect_answers }}</h3>
+                    <p>Incorrect Answers</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>{{ percentage_score }}%</h3>
+                    <p>Score</p>
+                </div>
+            </div>
+            <div class="mt-4">
+                <h4>Total Questions: {{ total_questions }}</h4>
+                <h4>Time Taken: {{ time_taken }} seconds</h4>
+            </div>
+            <a href="{% url 'quiz:home' %}" class="btn btn-primary mt-3">Back to Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
